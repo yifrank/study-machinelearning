@@ -25,7 +25,7 @@ x_train,x_test,y_train,y_test = train_test_split(iris.data,iris.target,test_size
 from sklearn.preprocessing import StandardScaler
 #从sklearn.neighors里选择导入KNeigborsClassifier,即k近邻分类器。
 from sklearn.neighbors import KNeighborsClassifier
-#对训练课测试样本进行标准化
+#对训练和测试样本进行标准化
 ss = StandardScaler()
 x_train = ss.fit_transform(x_train)
 x_test = ss.transform(x_test)
