@@ -63,7 +63,7 @@ xgbc_submission = pd.DataFrame({'PassengerId': test['PassengerId'], 'Survived': 
 xgbc_submission.to_csv('xgbc_submission.csv', index=False)
 
 #并使用并行网格搜索的方式寻找更好的超参数组合，以期待进一步提高XGBlassifier的预测性能
-params = {'max_depth': range(2,7),'n_estimators': range(100, 1100, 200), 'learning_rate':[0.05, 0.1, 0.25, 0.5, 1.0]}
+params = {'max_depth': range(2, 7), 'n_estimators': range(100, 1100, 200), 'learning_rate':[0.05, 0.1, 0.25, 0.5, 1.0]}
 xgbc_best = XGBClassifier()
 gs = GridSearchCV(xgbc_best, params, n_jobs=1, cv=5, verbose=1)
 gs.fit(x_train, y_train)
